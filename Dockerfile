@@ -5,6 +5,7 @@ RUN apt upgrade -y
 # OS Tools that are useful
 RUN apt install curl -y
 RUN apt install vim -y
+RUN apt install git -y
 
 # Python requirements
 RUN apt install python3 -y
