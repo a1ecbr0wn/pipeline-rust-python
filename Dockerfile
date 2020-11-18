@@ -3,6 +3,9 @@ RUN apt update
 RUN apt upgrade -y
 
 # OS Tools that are useful
+RUN DEBIAN_FRONTEND="noninteractive" apt install tzdata -y
+RUN apt install pkg-config -y
+RUN apt install libssl-dev -y
 RUN apt install curl -y
 RUN apt install vim -y
 RUN apt install git -y
