@@ -1,0 +1,21 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag alecbrown/pipeline-rust-python:$(date +%s)
+    - name: Push the Docker Image to hub.docker.com
+      run: docker push alecbrown/pipeline-rust-python
+    
